@@ -94,15 +94,17 @@
   function renderAvailability(){
     if(!dayData) return;
     const step=Number(dayData.stepMinutes||30), startHour=Number(dayData.startHour||11), endHour=Number(dayData.endHour||22);
+    const earliest=earliestSameDayStart();
     const rows=[];
     for(let min=startHour*60; min<=endHour*60-duration; min+=step){
+      if(earliest!==null && min<earliest) continue;
       const start=localTimestamp(date,min), end=start+duration*60000, label=displayTime(min);
       const s1=!conflicts(start,end,dayData.busy && dayData.busy.simulator1);
       const s2=!conflicts(start,end,dayData.busy && dayData.busy.simulator2);
       rows.push('<div class="availability-row"><div class="availability-time">'+label+'</div><button type="button" class="choice slot" '+(s1?'':'disabled')+' data-sim="simulator1" data-time="'+label+'">'+(s1?'Available':'Unavailable')+'</button><button type="button" class="choice slot" '+(s2?'':'disabled')+' data-sim="simulator2" data-time="'+label+'">'+(s2?'Available':'Unavailable')+'</button></div>');
     }
     const leadNote=earliest!==null?' Same-day reservations require at least 30 minutes notice.':'';
-     $('availability').innerHTML='<div class="availability"><div class="section-label">3. Simulator & start time</div><p class="availability-note">Showing start times available for a <strong>'+durationText(duration).toLowerCase()+'</strong> session.'+leadNote+'</p><div class="availability-head"><span>Time</span><span>Simulator 1</span><span>Simulator 2</span></div>'+(rows.join('')||'<div class="notice">No openings are available for this date and session length.</div>')+'</div>';
+    $('availability').innerHTML='<div class="availability"><div class="section-label">3. Simulator & start time</div><p class="availability-note">Showing start times available for a <strong>'+durationText(duration).toLowerCase()+'</strong> session.'+leadNote+'</p><div class="availability-head"><span>Time</span><span>Simulator 1</span><span>Simulator 2</span></div>'+(rows.join('')||'<div class="notice">No openings are available for this date and session length.</div>')+'</div>';
     document.querySelectorAll('[data-sim]').forEach(btn=>btn.addEventListener('click',function(){ simulator=this.dataset.sim; time=this.dataset.time; document.querySelectorAll('[data-sim]').forEach(b=>b.classList.toggle('active',b===this)); renderContact(); }));
     resize();
   }
