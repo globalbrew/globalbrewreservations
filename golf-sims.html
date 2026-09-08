@@ -5,21 +5,445 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Golf Simulator Reservations | Global Brew Tap House</title>
 <style>
-:root{--gold:#ffb003;--ink:#151515;--muted:#68635c;--line:#ded8ce;--paper:#f6f3ed;--cream:#fffaf0;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.wrap{width:min(1080px,calc(100% - 34px));margin:auto}.site-header{background:#111;color:#fff;border-bottom:3px solid var(--gold)}.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;gap:12px;align-items:center}.brand-mark{width:46px;height:46px;display:grid;place-items:center;border:2px solid var(--gold);font-size:18px;font-weight:900;color:var(--gold)}.brand strong{display:block;font-size:20px;letter-spacing:.08em}.brand small{display:block;font-size:9px;letter-spacing:.12em;color:#ccc;margin-top:2px}.call{color:#fff;text-decoration:none;font-size:13px;font-weight:800}.hero{padding:34px 0 10px}.eyebrow,.step-label{color:#9a6b00;font-weight:900;letter-spacing:.15em;font-size:11px}.hero h1{font-size:38px;line-height:1;margin:10px 0 14px;letter-spacing:-.02em}.hero p{margin:0;font-size:15px}.booking-wrap{width:min(900px,calc(100% - 28px));margin:22px auto 50px}.booking-panel{background:#fff;border:1px solid var(--line);padding:28px}.booking-panel h2{font-size:30px;margin:8px 0 8px}.intro{color:var(--muted);line-height:1.55;margin:0 0 20px}.brand-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#111;color:#fff;border-left:5px solid var(--gold);padding:16px 18px;margin:0 0 22px}.brand-strip strong{display:block;letter-spacing:.08em}.brand-strip span{display:block;color:#d5d5d5;font-size:12px;margin-top:4px}.rate-card{background:var(--cream);border:1px solid #eadcb7;padding:15px 17px;margin:14px 0 20px;display:flex;justify-content:space-between;gap:20px;align-items:center}.rate-card strong{display:block;font-size:14px;margin-bottom:5px}.rate-card span{display:block;font-size:13px;color:var(--muted);line-height:1.4}.selected-price{white-space:nowrap;text-align:right;flex:0 0 auto;padding-left:14px}.selected-price b{display:block;font-size:22px;color:#111}.selected-price small{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#777}.section-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:20px}.duration-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0 18px}.choice{border:1px solid #cbc5bb;background:#fff;padding:12px 8px;min-height:48px;font-weight:800;cursor:pointer}.choice small{display:block;font-weight:700;color:#777;margin-top:4px}.choice.active{background:#111;color:#fff;border-color:#111}.choice.active small{color:#ddd}.choice:disabled{opacity:.45;cursor:not-allowed;background:#eee;color:#777}.field{margin-top:16px}.field label{display:block;font-size:11px;font-weight:900;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}.field input{width:100%;padding:13px;border:1px solid #cbc5bb;background:#fff;font-size:16px}.date-field{max-width:360px}.availability{margin-top:24px}.availability-note{margin:4px 0 12px;color:var(--muted);font-size:13px}.availability-head,.availability-row{display:grid;grid-template-columns:95px 1fr 1fr;gap:8px;align-items:center}.availability-head{font-size:11px;font-weight:900;text-transform:uppercase;color:#777;padding:0 4px 7px}.availability-row{padding:4px 0}.availability-time{font-weight:800;padding:10px 4px}.slot{width:100%}.notice{margin-top:18px;background:#f7f1e3;border-left:4px solid var(--gold);padding:14px 16px;font-size:13px;line-height:1.5}.notice.error{background:#fbefef;border-left-color:#a93535}.summary{margin:22px 0 4px;background:#f7f1e3;border-left:4px solid var(--gold);padding:14px 16px}.summary span,.summary strong,.summary small{display:block}.summary span{font-size:11px;font-weight:900;text-transform:uppercase}.summary strong{margin-top:5px}.summary small{margin-top:4px;color:var(--muted)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}.policy{display:flex;gap:9px;align-items:flex-start;margin-top:18px;font-size:12px;color:var(--muted);line-height:1.5}.policy input{margin-top:2px}.actions{display:flex;justify-content:flex-end;margin-top:22px}.btn{border:0;padding:15px 20px;background:var(--gold);font-weight:900;cursor:pointer}.btn:disabled{opacity:.55}.loading{color:var(--muted);font-size:13px;padding:12px 0;display:flex;gap:10px;align-items:center}.spinner{width:16px;height:16px;border:2px solid #ddd;border-top-color:#111;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.success{text-align:left}.check{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--gold);font-size:26px;font-weight:900;margin-bottom:16px}.hidden{display:none!important}body.embedded{background:#fff}body.embedded .standalone-only{display:none!important}body.embedded .booking-wrap{width:100%;margin:0}body.embedded .booking-panel{border:0;padding:18px 4px 24px}
-@media(max-width:650px){.duration-grid{grid-template-columns:repeat(2,1fr)}.duration-grid button:last-child{grid-column:1/-1}.availability-head,.availability-row{grid-template-columns:64px 1fr 1fr;gap:5px}.availability-head{font-size:9px}.availability-time{font-size:13px}.slot{font-size:11px;padding:10px 4px}.contact-grid{grid-template-columns:1fr}.full{grid-column:auto}.booking-panel{padding:21px}.call{display:none}.rate-card{align-items:flex-start;flex-direction:column;gap:12px}.selected-price{text-align:left;padding-left:0}.brand-strip{align-items:flex-start}}
+
+:root{
+  --gold:#ffb003;
+  --ink:#111111;
+  --soft-ink:#252525;
+  --muted:#6f6f6f;
+  --line:#e7e7e7;
+  --paper:#f5f5f3;
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+button,input{font:inherit}
+button{transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease}
+button:focus-visible,input:focus-visible{outline:3px solid rgba(255,176,3,.35);outline-offset:2px}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+
+.site-header{
+  background:#111;
+  color:#fff;
+  border-bottom:1px solid #222;
+}
+.header-inner{
+  min-height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand{display:flex;gap:14px;align-items:center}
+.brand-mark{
+  width:44px;height:44px;
+  display:grid;place-items:center;
+  border:2px solid var(--gold);
+  font-size:17px;font-weight:900;
+  color:var(--gold);
+  letter-spacing:-.03em
+}
+.brand strong{display:block;font-size:20px;letter-spacing:.08em}
+.brand small{display:block;font-size:9px;letter-spacing:.14em;color:#bdbdbd;margin-top:2px}
+.call{color:#fff;text-decoration:none;font-size:13px;font-weight:800}
+
+.hero{
+  padding:54px 0 28px;
+  background:var(--paper);
+}
+.eyebrow,.step-label{
+  color:#9b6b00;
+  font-weight:900;
+  letter-spacing:.18em;
+  font-size:11px;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-size:clamp(46px,7vw,88px);
+  line-height:.92;
+  margin:12px 0 20px;
+  letter-spacing:-.055em;
+  font-weight:900;
+  max-width:900px;
+}
+.hero p{margin:0;font-size:17px;color:#414141;max-width:680px}
+
+.booking-wrap{
+  width:min(1040px,calc(100% - 30px));
+  margin:18px auto 70px;
+}
+.booking-panel{
+  background:var(--white);
+  border:1px solid #ececec;
+  padding:0;
+  box-shadow:0 16px 50px rgba(0,0,0,.055);
+}
+.booking-hero{
+  background:#111;
+  color:#fff;
+  padding:34px 34px 30px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:24px;
+  align-items:end;
+}
+.booking-hero .kicker{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.booking-hero h2{
+  font-size:clamp(34px,5vw,58px);
+  line-height:.95;
+  letter-spacing:-.045em;
+  margin:8px 0 12px;
+  font-weight:900;
+}
+.booking-hero p{
+  margin:0;
+  color:#cfcfcf;
+  font-size:15px;
+  line-height:1.5;
+  max-width:620px;
+}
+.booking-hero .hero-mark{
+  width:62px;height:62px;
+  border:2px solid var(--gold);
+  color:var(--gold);
+  display:grid;place-items:center;
+  font-weight:900;font-size:22px;
+}
+
+.booking-body{padding:34px}
+
+.rate-card{
+  background:#f7f7f5;
+  border:0;
+  padding:20px 22px;
+  margin:0 0 30px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+}
+.rate-card strong{
+  display:block;
+  font-size:13px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:7px
+}
+.rate-card span{
+  display:block;
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.45
+}
+.selected-price{
+  white-space:nowrap;
+  text-align:right;
+  flex:0 0 auto;
+  padding-left:14px
+}
+.selected-price small{
+  display:block;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:#777;
+  margin-bottom:4px;
+  font-weight:800
+}
+.selected-price b{
+  display:block;
+  font-size:32px;
+  line-height:1;
+  color:#111;
+  letter-spacing:-.035em
+}
+
+.section-label{
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  margin:30px 0 12px;
+  color:#1d1d1d;
+}
+.section-label::first-letter{color:var(--gold)}
+
+.duration-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin:0 0 26px
+}
+.choice{
+  border:1px solid #d8d8d8;
+  background:#fff;
+  padding:15px 12px;
+  min-height:60px;
+  font-weight:900;
+  cursor:pointer;
+  border-radius:0;
+}
+.choice:hover:not(:disabled){
+  border-color:#111;
+  transform:translateY(-1px);
+}
+.choice small{
+  display:block;
+  font-weight:700;
+  color:#777;
+  margin-top:5px;
+  font-size:12px
+}
+.choice.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+  box-shadow:inset 0 -3px 0 var(--gold)
+}
+.choice.active small{color:#ddd}
+.choice:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+  background:#f3f3f3;
+  color:#888;
+  transform:none
+}
+
+.field{margin-top:16px}
+.field label{
+  display:block;
+  font-size:10px;
+  font-weight:900;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#4d4d4d
+}
+.field input{
+  width:100%;
+  padding:15px 16px;
+  border:1px solid #d5d5d5;
+  background:#fff;
+  font-size:16px;
+  min-height:52px
+}
+.date-field{max-width:380px}
+
+.availability{margin-top:32px}
+.availability-note{
+  margin:3px 0 18px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5
+}
+.availability-head,.availability-row{
+  display:grid;
+  grid-template-columns:110px 1fr 1fr;
+  gap:10px;
+  align-items:center
+}
+.availability-head{
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#777;
+  padding:0 0 10px;
+  border-bottom:1px solid #ececec
+}
+.availability-row{
+  padding:10px 0;
+  border-bottom:1px solid #efefef
+}
+.availability-time{
+  font-weight:900;
+  padding:10px 0;
+  letter-spacing:-.02em
+}
+.slot{
+  width:100%;
+  min-height:48px;
+  font-size:13px
+}
+.slot:not(:disabled):not(.active){
+  background:#f7f7f5;
+  border-color:#f7f7f5
+}
+.slot:not(:disabled):hover{background:#ececea}
+.slot.active{background:#111!important}
+
+.notice{
+  margin-top:18px;
+  background:#f6f6f3;
+  border-left:4px solid var(--gold);
+  padding:16px 18px;
+  font-size:13px;
+  line-height:1.55
+}
+.notice.error{
+  background:#fff2f2;
+  border-left-color:#ba3636
+}
+
+.summary{
+  margin:28px 0 4px;
+  background:#111;
+  color:#fff;
+  border-left:4px solid var(--gold);
+  padding:18px 20px
+}
+.summary span,.summary strong,.summary small{display:block}
+.summary span{
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--gold)
+}
+.summary strong{
+  margin-top:7px;
+  font-size:18px
+}
+.summary small{
+  margin-top:6px;
+  color:#cfcfcf
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px
+}
+.full{grid-column:1/-1}
+
+.policy{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin-top:20px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.55
+}
+.policy input{margin-top:2px}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:24px
+}
+.btn{
+  border:0;
+  padding:16px 24px;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  min-width:220px
+}
+.btn:hover:not(:disabled){
+  background:#2a2a2a;
+  transform:translateY(-1px)
+}
+.btn:disabled{opacity:.55}
+
+.loading{
+  color:var(--muted);
+  font-size:13px;
+  padding:16px 0;
+  display:flex;
+  gap:10px;
+  align-items:center
+}
+.spinner{
+  width:16px;height:16px;
+  border:2px solid #ddd;
+  border-top-color:#111;
+  border-radius:50%;
+  animation:spin .7s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.success{text-align:left;padding:8px 0}
+.check{
+  width:58px;height:58px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--gold);
+  font-size:27px;
+  font-weight:900;
+  margin-bottom:18px
+}
+.hidden{display:none!important}
+
+body.embedded{background:#fff}
+body.embedded .standalone-only{display:none!important}
+body.embedded .booking-wrap{width:100%;margin:0}
+body.embedded .booking-panel{border:0;box-shadow:none}
+body.embedded .booking-hero{padding:30px 30px 26px}
+body.embedded .booking-body{padding:30px}
+
+@media(max-width:760px){
+  .duration-grid{grid-template-columns:repeat(2,1fr)}
+  .duration-grid button:last-child{grid-column:1/-1}
+  .availability-head,.availability-row{grid-template-columns:74px 1fr 1fr;gap:6px}
+  .availability-head{font-size:9px}
+  .availability-time{font-size:13px}
+  .slot{font-size:11px;padding:10px 5px}
+  .contact-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .booking-hero{grid-template-columns:1fr}
+  .booking-hero .hero-mark{display:none}
+  .booking-body{padding:24px}
+  .rate-card{align-items:flex-start;flex-direction:column;gap:14px}
+  .selected-price{text-align:left;padding-left:0}
+  .brand-strip{align-items:flex-start}
+  .call{display:none}
+}
+@media(max-width:480px){
+  .wrap{width:min(100% - 24px,1180px)}
+  .booking-wrap{width:100%;margin:0}
+  .booking-panel{border-left:0;border-right:0}
+  .booking-hero{padding:24px 20px}
+  .booking-body{padding:22px 18px 28px}
+  .hero{padding:36px 0 22px}
+  .hero h1{font-size:50px}
+  .rate-card{padding:18px}
+  .availability-head,.availability-row{grid-template-columns:62px 1fr 1fr}
+  .btn{width:100%;min-width:0}
+}
+
 </style>
 </head>
 <body>
 <header class="site-header standalone-only"><div class="wrap header-inner"><div class="brand"><span class="brand-mark">GB</span><span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span></div><a class="call" href="tel:+16183075858">618.307.5858</a></div></header>
-<section class="hero standalone-only"><div class="wrap"><p class="eyebrow">GOLF SIMULATORS</p><h1>BOOK YOUR SIM.</h1><p>Choose a session length, date, simulator, and available start time.</p></div></section>
+<section class="hero standalone-only"><div class="wrap"><p class="eyebrow">GLOBAL BREW GOLF SIMULATORS</p><h1>YOUR BAY.<br>YOUR TIME.</h1><p>Fast booking. Two Full Swing simulator bays. No account required.</p></div></section>
 <main class="booking-wrap">
   <section id="bookingPanel" class="booking-panel">
-    <div class="brand-strip"><div><strong>GLOBAL BREW GOLF SIMULATORS</strong><span>Edwardsville · Two simulator bays</span></div><div class="brand-mark" aria-hidden="true">GB</div></div>
-    <div class="step-label">GOLF SIMULATOR RESERVATION</div>
-    <h2>Find an available simulator</h2>
-    <p class="intro">Choose your session length and date. We’ll show live openings for Simulator 1 and Simulator 2.</p>
-
+    <div class="booking-hero">
+      <div>
+        <div class="kicker">GLOBAL BREW · EDWARDSVILLE</div>
+        <h2>BOOK YOUR BAY.</h2>
+        <p>Pick your session, choose a date, and lock in Simulator 1 or Simulator 2 in just a few clicks.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">GB</div>
+    </div>
+    <div class="booking-body">
     <div class="rate-card"><div><strong>Simulator Rates</strong><span>$45 first hour · $25 each additional hour</span></div><div class="selected-price"><small>Selected session</small><b id="selectedPrice">$70</b></div></div>
 
     <div class="section-label">1. Session length</div>
@@ -36,6 +460,7 @@
 
     <div id="availability"></div>
     <div id="contactArea"></div>
+    </div>
   </section>
 </main>
 <script>
