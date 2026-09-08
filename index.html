@@ -3,79 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reservations | Global Brew Tap House</title>
-  <meta name="description" content="Book the Global Brew golf simulator or request the Barrel Room for your next event." />
+  <title>Golf Simulator Reservations | Global Brew Tap House</title>
+  <meta name="description" content="Book Golf Simulator 1 or Golf Simulator 2 at Global Brew Tap House in Edwardsville." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-service="simulator">
   <header class="site-header standalone-only">
     <div class="wrap header-inner">
-      <a class="brand" href="#" aria-label="Global Brew Reservations">
-        <span class="brand-mark">GB</span>
-        <span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span>
-      </a>
+      <div class="brand"><span class="brand-mark">GB</span><span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span></div>
       <a class="call" href="tel:+16183075858">618.307.5858</a>
     </div>
   </header>
-
-  <main>
-    <section class="hero standalone-only">
-      <div class="wrap hero-inner">
-        <p class="eyebrow">GLOBAL BREW RESERVATIONS</p>
-        <h1>BOOK YOUR SPOT.</h1>
-        <p>Reserve the golf simulator or request the Barrel Room for your next event.</p>
-      </div>
-    </section>
-
-    <section class="wrap service-grid standalone-only" aria-label="Reservation options">
-      <article class="service-card">
-        <div class="service-kicker">PLAY A ROUND</div>
-        <h2>Golf Simulator</h2>
-        <p>Pick your session length, choose an available time, and you're booked.</p>
-        <div class="chips">
-          <span>1 HR</span><span>1.5 HR</span><span>2 HR</span><span>2.5 HR</span><span>3 HR</span>
-        </div>
-        <button class="btn primary" data-open="simulator">Book the Simulator</button>
-      </article>
-
-      <article class="service-card dark-card">
-        <div class="service-kicker">PRIVATE EVENTS</div>
-        <h2>The Barrel Room</h2>
-        <p>A private event space for birthdays, showers, reunions, corporate events and celebrations.</p>
-        <div class="detail-row"><span>Capacity</span><strong>Up to 50–60 guests</strong></div>
-        <div class="detail-row"><span>Booking</span><strong>Request + approval</strong></div>
-        <button class="btn light" data-open="barrel">Request the Barrel Room</button>
-      </article>
-    </section>
-
-    <section id="embeddedBooking" class="embed-shell" hidden>
-      <div id="embeddedContent" class="embedded-content"></div>
-    </section>
-
-    <section class="wrap trust-strip standalone-only">
-      <div><strong>2329 Plum Street</strong><span>Edwardsville, IL 62025</span></div>
-      <div><strong>Central Time</strong><span>All booking times shown locally</span></div>
-      <div><strong>No online payment</strong><span>Barrel Room card authorization handled separately through Toast</span></div>
-    </section>
+  <main class="booking-page">
+    <section class="standalone-only mini-hero"><div class="wrap"><p class="eyebrow">GOLF SIMULATORS</p><h1>BOOK YOUR SIM.</h1><p>Choose a session length, date, simulator, and available start time.</p></div></section>
+    <section class="booking-wrap"><div id="bookingRoot" class="booking-root" aria-live="polite"></div></section>
   </main>
-
-  <dialog id="bookingDialog">
-    <form method="dialog" class="dialog-shell" id="bookingForm">
-      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
-      <div id="stepContent"></div>
-    </form>
-  </dialog>
-
-  <footer class="standalone-only">
-    <div class="wrap footer-inner">
-      <span>Global Brew Tap House · Edwardsville</span>
-      <span>believe in GOOD BEER®</span>
-    </div>
-  </footer>
-
   <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
