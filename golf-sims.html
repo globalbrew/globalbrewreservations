@@ -8,12 +8,11 @@
 
 :root{
   --gold:#ffb003;
-  --ink:#111111;
-  --soft-ink:#252525;
-  --muted:#6f6f6f;
-  --line:#e7e7e7;
-  --paper:#f5f5f3;
-  --white:#ffffff;
+  --ink:#111;
+  --muted:#6d6d6d;
+  --line:#e7e7e2;
+  --paper:#f4f4ef;
+  --white:#fff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -25,8 +24,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 button,input{font:inherit}
-button{transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease}
-button:focus-visible,input:focus-visible{outline:3px solid rgba(255,176,3,.35);outline-offset:2px}
+button{transition:.18s ease}
 .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
 
 .site-header{
@@ -35,167 +33,125 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(255,176,3,.35);o
   border-bottom:1px solid #222;
 }
 .header-inner{
-  min-height:74px;
+  min-height:68px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+  gap:20px;
 }
-.brand{display:flex;gap:14px;align-items:center}
+.brand{display:flex;align-items:center;gap:13px}
 .brand-mark{
-  width:44px;height:44px;
+  width:42px;height:42px;
   display:grid;place-items:center;
   border:2px solid var(--gold);
-  font-size:17px;font-weight:900;
   color:var(--gold);
-  letter-spacing:-.03em
+  font-weight:900;
+  font-size:17px;
 }
-.brand strong{display:block;font-size:20px;letter-spacing:.08em}
-.brand small{display:block;font-size:9px;letter-spacing:.14em;color:#bdbdbd;margin-top:2px}
+.brand strong{display:block;font-size:19px;letter-spacing:.09em}
+.brand small{display:block;font-size:9px;letter-spacing:.15em;color:#aaa;margin-top:2px}
 .call{color:#fff;text-decoration:none;font-size:13px;font-weight:800}
 
 .hero{
-  padding:54px 0 28px;
-  background:var(--paper);
+  padding:72px 0 56px;
+  border-bottom:1px solid var(--line);
 }
-.eyebrow,.step-label{
-  color:#9b6b00;
+.eyebrow{
+  margin:0 0 16px;
+  color:#8d6500;
+  font-size:12px;
   font-weight:900;
   letter-spacing:.18em;
-  font-size:11px;
   text-transform:uppercase;
 }
 .hero h1{
-  font-size:clamp(46px,7vw,88px);
-  line-height:.92;
-  margin:12px 0 20px;
-  letter-spacing:-.055em;
-  font-weight:900;
+  margin:0;
   max-width:900px;
+  font-size:clamp(62px,8vw,108px);
+  line-height:.86;
+  letter-spacing:-.06em;
+  font-weight:900;
 }
-.hero p{margin:0;font-size:17px;color:#414141;max-width:680px}
+.hero p{
+  margin:26px 0 0;
+  max-width:660px;
+  font-size:18px;
+  line-height:1.5;
+  color:#404040;
+}
 
 .booking-wrap{
-  width:min(1040px,calc(100% - 30px));
-  margin:18px auto 70px;
+  width:min(980px,calc(100% - 32px));
+  margin:0 auto 90px;
 }
 .booking-panel{
-  background:var(--white);
-  border:1px solid #ececec;
-  padding:0;
-  box-shadow:0 16px 50px rgba(0,0,0,.055);
-}
-.booking-hero{
-  background:#111;
-  color:#fff;
-  padding:34px 34px 30px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:24px;
-  align-items:end;
-}
-.booking-hero .kicker{
-  color:var(--gold);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-.booking-hero h2{
-  font-size:clamp(34px,5vw,58px);
-  line-height:.95;
-  letter-spacing:-.045em;
-  margin:8px 0 12px;
-  font-weight:900;
-}
-.booking-hero p{
-  margin:0;
-  color:#cfcfcf;
-  font-size:15px;
-  line-height:1.5;
-  max-width:620px;
-}
-.booking-hero .hero-mark{
-  width:62px;height:62px;
-  border:2px solid var(--gold);
-  color:var(--gold);
-  display:grid;place-items:center;
-  font-weight:900;font-size:22px;
-}
-
-.booking-body{padding:34px}
-
-.rate-card{
-  background:#f7f7f5;
+  background:transparent;
   border:0;
-  padding:20px 22px;
-  margin:0 0 30px;
+  padding:0;
+}
+.booking-intro{
+  padding:48px 0 28px;
   display:flex;
   justify-content:space-between;
-  gap:24px;
-  align-items:center;
+  gap:30px;
+  align-items:end;
 }
-.rate-card strong{
-  display:block;
-  font-size:13px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-bottom:7px
+.booking-intro h2{
+  margin:8px 0 0;
+  font-size:clamp(38px,5vw,60px);
+  line-height:.95;
+  letter-spacing:-.04em;
 }
-.rate-card span{
-  display:block;
-  font-size:15px;
+.booking-intro p{
+  margin:0;
+  max-width:430px;
   color:var(--muted);
-  line-height:1.45
+  line-height:1.5;
+  font-size:15px;
 }
-.selected-price{
-  white-space:nowrap;
-  text-align:right;
-  flex:0 0 auto;
-  padding-left:14px
-}
-.selected-price small{
-  display:block;
-  font-size:9px;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  color:#777;
-  margin-bottom:4px;
-  font-weight:800
-}
-.selected-price b{
-  display:block;
-  font-size:32px;
-  line-height:1;
-  color:#111;
-  letter-spacing:-.035em
-}
-
-.section-label{
+.step-label,.section-label{
+  color:#1c1c1c;
   font-size:12px;
   font-weight:900;
   text-transform:uppercase;
-  letter-spacing:.13em;
-  margin:30px 0 12px;
-  color:#1d1d1d;
+  letter-spacing:.14em;
 }
-.section-label::first-letter{color:var(--gold)}
+.step-label{color:#8d6500}
+
+.flow-section{
+  border-top:1px solid var(--line);
+  padding:34px 0 38px;
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:18px;
+}
+.section-title{
+  margin:0;
+  font-size:28px;
+  letter-spacing:-.03em;
+}
+.section-hint{
+  color:var(--muted);
+  font-size:13px;
+}
 
 .duration-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:10px;
-  margin:0 0 26px
 }
 .choice{
-  border:1px solid #d8d8d8;
+  border:1px solid #d8d8d3;
   background:#fff;
-  padding:15px 12px;
-  min-height:60px;
-  font-weight:900;
+  color:#111;
+  padding:16px 14px;
+  min-height:74px;
   cursor:pointer;
-  border-radius:0;
+  font-weight:900;
 }
 .choice:hover:not(:disabled){
   border-color:#111;
@@ -203,264 +159,287 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(255,176,3,.35);o
 }
 .choice small{
   display:block;
-  font-weight:700;
+  margin-top:7px;
+  font-size:13px;
+  font-weight:800;
   color:#777;
-  margin-top:5px;
-  font-size:12px
 }
 .choice.active{
   background:#111;
   color:#fff;
   border-color:#111;
-  box-shadow:inset 0 -3px 0 var(--gold)
+  box-shadow:inset 0 -4px 0 var(--gold);
 }
 .choice.active small{color:#ddd}
 .choice:disabled{
-  opacity:.42;
+  background:#efefeb;
+  color:#929292;
   cursor:not-allowed;
-  background:#f3f3f3;
-  color:#888;
-  transform:none
+  opacity:.7;
 }
 
-.field{margin-top:16px}
+.price-summary{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:13px;
+}
+.price-summary strong{color:#111}
+
+.field{margin-top:0}
 .field label{
   display:block;
+  margin-bottom:9px;
   font-size:10px;
   font-weight:900;
-  margin-bottom:8px;
+  letter-spacing:.13em;
   text-transform:uppercase;
-  letter-spacing:.12em;
-  color:#4d4d4d
+  color:#555;
 }
 .field input{
   width:100%;
-  padding:15px 16px;
-  border:1px solid #d5d5d5;
+  min-height:58px;
+  border:1px solid #d6d6d1;
   background:#fff;
-  font-size:16px;
-  min-height:52px
+  padding:16px 18px;
+  font-size:17px;
 }
-.date-field{max-width:380px}
+.date-field{max-width:420px}
 
-.availability{margin-top:32px}
+.availability{margin-top:0}
 .availability-note{
-  margin:3px 0 18px;
+  margin:0 0 18px;
   color:var(--muted);
   font-size:14px;
-  line-height:1.5
+  line-height:1.5;
 }
-.availability-head,.availability-row{
+.time-list{display:grid;gap:10px}
+.time-card{
+  background:#fff;
+  border:1px solid #e3e3de;
+  padding:16px;
   display:grid;
-  grid-template-columns:110px 1fr 1fr;
+  grid-template-columns:115px 1fr 1fr;
   gap:10px;
-  align-items:center
+  align-items:center;
 }
-.availability-head{
-  font-size:10px;
+.time-card:hover{border-color:#cfcfc9}
+.time-label{
+  font-size:22px;
   font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  color:#777;
-  padding:0 0 10px;
-  border-bottom:1px solid #ececec
-}
-.availability-row{
-  padding:10px 0;
-  border-bottom:1px solid #efefef
-}
-.availability-time{
-  font-weight:900;
-  padding:10px 0;
-  letter-spacing:-.02em
+  letter-spacing:-.03em;
 }
 .slot{
+  min-height:52px;
   width:100%;
-  min-height:48px;
-  font-size:13px
+  padding:12px 14px;
+  font-size:13px;
+  font-weight:900;
+  border:1px solid #d7d7d2;
+  background:#f8f8f5;
+  cursor:pointer;
 }
-.slot:not(:disabled):not(.active){
-  background:#f7f7f5;
-  border-color:#f7f7f5
+.slot:hover:not(:disabled){
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
-.slot:not(:disabled):hover{background:#ececea}
-.slot.active{background:#111!important}
+.slot.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+  box-shadow:inset 0 -4px 0 var(--gold);
+}
+.slot:disabled{
+  background:#f0f0ed;
+  color:#aaa;
+  border-color:#ecece8;
+  cursor:not-allowed;
+}
+.slot-name{
+  display:block;
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.slot-state{display:block}
 
 .notice{
-  margin-top:18px;
-  background:#f6f6f3;
+  background:#fff;
   border-left:4px solid var(--gold);
-  padding:16px 18px;
+  padding:17px 18px;
   font-size:13px;
-  line-height:1.55
+  line-height:1.55;
 }
 .notice.error{
+  border-left-color:#b93a3a;
   background:#fff2f2;
-  border-left-color:#ba3636
 }
 
 .summary{
-  margin:28px 0 4px;
+  margin:0 0 30px;
   background:#111;
   color:#fff;
+  padding:22px 24px;
   border-left:4px solid var(--gold);
-  padding:18px 20px
 }
 .summary span,.summary strong,.summary small{display:block}
 .summary span{
+  color:var(--gold);
   font-size:10px;
   font-weight:900;
-  text-transform:uppercase;
   letter-spacing:.14em;
-  color:var(--gold)
+  text-transform:uppercase;
 }
 .summary strong{
   margin-top:7px;
-  font-size:18px
+  font-size:21px;
 }
 .summary small{
-  margin-top:6px;
-  color:#cfcfcf
+  margin-top:7px;
+  color:#cfcfcf;
+  font-size:13px;
 }
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px
+  gap:16px;
 }
 .full{grid-column:1/-1}
-
 .policy{
   display:flex;
   gap:10px;
   align-items:flex-start;
-  margin-top:20px;
-  font-size:12px;
+  margin-top:18px;
   color:var(--muted);
-  line-height:1.55
+  font-size:12px;
+  line-height:1.5;
 }
 .policy input{margin-top:2px}
-
 .actions{
+  margin-top:24px;
   display:flex;
   justify-content:flex-end;
-  margin-top:24px
 }
 .btn{
+  min-width:250px;
   border:0;
-  padding:16px 24px;
   background:#111;
   color:#fff;
+  padding:17px 24px;
   font-weight:900;
-  cursor:pointer;
   text-transform:uppercase;
-  letter-spacing:.06em;
-  min-width:220px
+  letter-spacing:.07em;
+  cursor:pointer;
 }
-.btn:hover:not(:disabled){
-  background:#2a2a2a;
-  transform:translateY(-1px)
-}
+.btn:hover:not(:disabled){background:#2a2a2a;transform:translateY(-1px)}
 .btn:disabled{opacity:.55}
 
 .loading{
-  color:var(--muted);
-  font-size:13px;
-  padding:16px 0;
   display:flex;
+  align-items:center;
   gap:10px;
-  align-items:center
+  color:var(--muted);
+  padding:10px 0;
+  font-size:13px;
 }
 .spinner{
   width:16px;height:16px;
   border:2px solid #ddd;
   border-top-color:#111;
   border-radius:50%;
-  animation:spin .7s linear infinite
+  animation:spin .7s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-.success{text-align:left;padding:8px 0}
+.success{padding:46px 0}
 .check{
   width:58px;height:58px;
-  border-radius:50%;
   display:grid;place-items:center;
+  border-radius:50%;
   background:var(--gold);
-  font-size:27px;
+  font-size:26px;
   font-weight:900;
-  margin-bottom:18px
+  margin-bottom:18px;
 }
 .hidden{display:none!important}
 
 body.embedded{background:#fff}
 body.embedded .standalone-only{display:none!important}
 body.embedded .booking-wrap{width:100%;margin:0}
-body.embedded .booking-panel{border:0;box-shadow:none}
-body.embedded .booking-hero{padding:30px 30px 26px}
-body.embedded .booking-body{padding:30px}
+body.embedded .booking-intro{padding-top:20px}
 
 @media(max-width:760px){
+  .booking-intro{display:block;padding:36px 0 24px}
+  .booking-intro p{margin-top:16px}
   .duration-grid{grid-template-columns:repeat(2,1fr)}
   .duration-grid button:last-child{grid-column:1/-1}
-  .availability-head,.availability-row{grid-template-columns:74px 1fr 1fr;gap:6px}
-  .availability-head{font-size:9px}
-  .availability-time{font-size:13px}
-  .slot{font-size:11px;padding:10px 5px}
+  .time-card{grid-template-columns:1fr 1fr}
+  .time-label{grid-column:1/-1;margin-bottom:2px}
   .contact-grid{grid-template-columns:1fr}
   .full{grid-column:auto}
-  .booking-hero{grid-template-columns:1fr}
-  .booking-hero .hero-mark{display:none}
-  .booking-body{padding:24px}
-  .rate-card{align-items:flex-start;flex-direction:column;gap:14px}
-  .selected-price{text-align:left;padding-left:0}
-  .brand-strip{align-items:flex-start}
-  .call{display:none}
+  .actions{justify-content:stretch}
+  .btn{width:100%;min-width:0}
 }
 @media(max-width:480px){
   .wrap{width:min(100% - 24px,1180px)}
-  .booking-wrap{width:100%;margin:0}
-  .booking-panel{border-left:0;border-right:0}
-  .booking-hero{padding:24px 20px}
-  .booking-body{padding:22px 18px 28px}
-  .hero{padding:36px 0 22px}
-  .hero h1{font-size:50px}
-  .rate-card{padding:18px}
-  .availability-head,.availability-row{grid-template-columns:62px 1fr 1fr}
-  .btn{width:100%;min-width:0}
+  .booking-wrap{width:min(100% - 24px,980px)}
+  .hero{padding:48px 0 38px}
+  .hero h1{font-size:62px}
+  .hero p{font-size:16px}
+  .flow-section{padding:28px 0 32px}
+  .section-head{display:block}
+  .section-hint{display:block;margin-top:6px}
+  .time-card{padding:13px}
 }
 
 </style>
 </head>
 <body>
 <header class="site-header standalone-only"><div class="wrap header-inner"><div class="brand"><span class="brand-mark">GB</span><span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span></div><a class="call" href="tel:+16183075858">618.307.5858</a></div></header>
-<section class="hero standalone-only"><div class="wrap"><p class="eyebrow">GLOBAL BREW GOLF SIMULATORS</p><h1>YOUR BAY.<br>YOUR TIME.</h1><p>Fast booking. Two Full Swing simulator bays. No account required.</p></div></section>
+<section class="hero standalone-only"><div class="wrap">
+      <p class="eyebrow">GLOBAL BREW GOLF SIMULATORS</p>
+      <h1>YOUR BAY.<br>YOUR TIME.</h1>
+      <p>Two Full Swing simulator bays. Pick your session, choose a time, and show up ready to play.</p>
+    </div></section>
 <main class="booking-wrap">
   <section id="bookingPanel" class="booking-panel">
-    <div class="booking-hero">
+    <div class="booking-intro">
       <div>
-        <div class="kicker">GLOBAL BREW · EDWARDSVILLE</div>
+        <div class="step-label">GOLF SIMULATOR RESERVATION</div>
         <h2>BOOK YOUR BAY.</h2>
-        <p>Pick your session, choose a date, and lock in Simulator 1 or Simulator 2 in just a few clicks.</p>
       </div>
-      <div class="hero-mark" aria-hidden="true">GB</div>
-    </div>
-    <div class="booking-body">
-    <div class="rate-card"><div><strong>Simulator Rates</strong><span>$45 first hour · $25 each additional hour</span></div><div class="selected-price"><small>Selected session</small><b id="selectedPrice">$70</b></div></div>
-
-    <div class="section-label">1. Session length</div>
-    <div class="duration-grid" id="durationGrid">
-      <button type="button" class="choice" data-min="60">1 HR<small>$45</small></button>
-      <button type="button" class="choice" data-min="90">1.5 HR<small>$57.50</small></button>
-      <button type="button" class="choice active" data-min="120">2 HR<small>$70</small></button>
-      <button type="button" class="choice" data-min="150">2.5 HR<small>$82.50</small></button>
-      <button type="button" class="choice" data-min="180">3 HR<small>$95</small></button>
+      <p>No account. No checkout maze. Choose a session, pick your bay, and confirm your reservation.</p>
     </div>
 
-    <div class="section-label">2. Date</div>
-    <div class="field date-field"><label for="simDate">Reservation date</label><input id="simDate" type="date"></div>
+    <div class="flow-section">
+      <div class="section-head">
+        <div>
+          <div class="section-label">1 — HOW LONG ARE YOU PLAYING?</div>
+        </div>
+        <span class="section-hint">$45 first hour · $25 each additional hour</span>
+      </div>
+      <div class="duration-grid" id="durationGrid">
+        <button type="button" class="choice" data-min="60">1 HR<small>$45</small></button>
+        <button type="button" class="choice" data-min="90">1.5 HR<small>$57.50</small></button>
+        <button type="button" class="choice active" data-min="120">2 HR<small>$70</small></button>
+        <button type="button" class="choice" data-min="150">2.5 HR<small>$82.50</small></button>
+        <button type="button" class="choice" data-min="180">3 HR<small>$95</small></button>
+      </div>
+      <div class="price-summary">Selected session: <strong id="selectedPrice">$70</strong></div>
+    </div>
+
+    <div class="flow-section">
+      <div class="section-head">
+        <div class="section-label">2 — WHEN ARE YOU PLAYING?</div>
+      </div>
+      <div class="field date-field">
+        <label for="simDate">Reservation date</label>
+        <input id="simDate" type="date">
+      </div>
+    </div>
 
     <div id="availability"></div>
     <div id="contactArea"></div>
-    </div>
   </section>
 </main>
 <script>
@@ -526,17 +505,49 @@ body.embedded .booking-body{padding:30px}
       const start=localTimestamp(date,min), end=start+duration*60000, label=displayTime(min);
       const s1=!conflicts(start,end,dayData.busy && dayData.busy.simulator1);
       const s2=!conflicts(start,end,dayData.busy && dayData.busy.simulator2);
-      rows.push('<div class="availability-row"><div class="availability-time">'+label+'</div><button type="button" class="choice slot" '+(s1?'':'disabled')+' data-sim="simulator1" data-time="'+label+'">'+(s1?'Available':'Unavailable')+'</button><button type="button" class="choice slot" '+(s2?'':'disabled')+' data-sim="simulator2" data-time="'+label+'">'+(s2?'Available':'Unavailable')+'</button></div>');
+      rows.push(
+        '<div class="time-card">'+
+          '<div class="time-label">'+label+'</div>'+
+          '<button type="button" class="slot" '+(s1?'':'disabled')+' data-sim="simulator1" data-time="'+label+'">'+
+            '<span class="slot-name">Simulator 1</span><span class="slot-state">'+(s1?'Available →':'Unavailable')+'</span>'+
+          '</button>'+
+          '<button type="button" class="slot" '+(s2?'':'disabled')+' data-sim="simulator2" data-time="'+label+'">'+
+            '<span class="slot-name">Simulator 2</span><span class="slot-state">'+(s2?'Available →':'Unavailable')+'</span>'+
+          '</button>'+
+        '</div>'
+      );
     }
     const leadNote=earliest!==null?' Same-day reservations require at least 30 minutes notice.':'';
-    $('availability').innerHTML='<div class="availability"><div class="section-label">3. Simulator & start time</div><p class="availability-note">Showing start times available for a <strong>'+durationText(duration).toLowerCase()+'</strong> session.'+leadNote+'</p><div class="availability-head"><span>Time</span><span>Simulator 1</span><span>Simulator 2</span></div>'+(rows.join('')||'<div class="notice">No openings are available for this date and session length.</div>')+'</div>';
-    document.querySelectorAll('[data-sim]').forEach(btn=>btn.addEventListener('click',function(){ simulator=this.dataset.sim; time=this.dataset.time; document.querySelectorAll('[data-sim]').forEach(b=>b.classList.toggle('active',b===this)); renderContact(); }));
+    $('availability').innerHTML=
+      '<div class="flow-section availability">'+
+        '<div class="section-head"><div class="section-label">3 — PICK YOUR START TIME</div></div>'+
+        '<p class="availability-note">Showing start times for a <strong>'+durationText(duration).toLowerCase()+'</strong> session.'+leadNote+'</p>'+
+        '<div class="time-list">'+
+          (rows.join('')||'<div class="notice">No openings are available for this date and session length.</div>')+
+        '</div>'+
+      '</div>';
+    document.querySelectorAll('[data-sim]').forEach(btn=>btn.addEventListener('click',function(){
+      simulator=this.dataset.sim; time=this.dataset.time;
+      document.querySelectorAll('[data-sim]').forEach(b=>b.classList.toggle('active',b===this));
+      renderContact();
+    }));
     resize();
   }
 
   function renderContact(){
     const label=simulator==='simulator1'?'Simulator 1':'Simulator 2';
-    $('contactArea').innerHTML='<div class="summary"><span>'+label+'</span><strong>'+prettyDate(date)+' · '+time+'</strong><small>'+durationText(duration)+' · '+money(priceFor(duration))+'</small></div><div class="section-label">4. Your information</div><div class="contact-grid"><div class="field"><label for="custName">Name</label><input id="custName" autocomplete="name"></div><div class="field"><label for="custPhone">Phone</label><input id="custPhone" type="tel" autocomplete="tel"></div><div class="field full"><label for="custEmail">Email</label><input id="custEmail" type="email" autocomplete="email"></div></div><label class="policy"><input id="policy" type="checkbox"><span>I understand this reservation is for the selected simulator and time and I should contact Global Brew if I need to make a change.</span></label><div class="actions"><button type="button" class="btn" id="confirmBtn">Confirm reservation</button></div>';
+    $('contactArea').innerHTML=
+      '<div class="flow-section">'+
+        '<div class="summary"><span>'+label+'</span><strong>'+prettyDate(date)+' · '+time+'</strong><small>'+durationText(duration)+' · '+money(priceFor(duration))+'</small></div>'+
+        '<div class="section-head"><div class="section-label">4 — WHO’S PLAYING?</div></div>'+
+        '<div class="contact-grid">'+
+          '<div class="field"><label for="custName">Name</label><input id="custName" autocomplete="name"></div>'+
+          '<div class="field"><label for="custPhone">Phone</label><input id="custPhone" type="tel" autocomplete="tel"></div>'+
+          '<div class="field full"><label for="custEmail">Email</label><input id="custEmail" type="email" autocomplete="email"></div>'+
+        '</div>'+
+        '<label class="policy"><input id="policy" type="checkbox"><span>I understand this reservation is for the selected simulator and time and I should contact Global Brew if I need to make a change.</span></label>'+
+        '<div class="actions"><button type="button" class="btn" id="confirmBtn">Confirm reservation</button></div>'+
+      '</div>';
     $('confirmBtn').addEventListener('click',submit); resize();
   }
 
