@@ -1,18 +1,96 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Golf Simulator Reservations | Global Brew Tap House</title>
-  <meta name="description" content="Book Golf Simulator 1 or Golf Simulator 2 at Global Brew Tap House in Edwardsville." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Golf Simulator Reservations | Global Brew Tap House</title>
+<style>
+:root{--gold:#ffb003;--ink:#151515;--muted:#68635c;--line:#ded8ce;--paper:#f6f3ed;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.wrap{width:min(1080px,calc(100% - 34px));margin:auto}.site-header{background:#111;color:#fff;border-bottom:3px solid var(--gold)}.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;gap:12px;align-items:center}.brand-mark{width:46px;height:46px;display:grid;place-items:center;border:2px solid var(--gold);font-size:18px;font-weight:900;color:var(--gold)}.brand strong{display:block;font-size:20px;letter-spacing:.08em}.brand small{display:block;font-size:9px;letter-spacing:.12em;color:#ccc;margin-top:2px}.call{color:#fff;text-decoration:none;font-size:13px;font-weight:800}.hero{padding:34px 0 10px}.eyebrow,.step-label{color:#a16f00;font-weight:900;letter-spacing:.15em;font-size:11px}.hero h1{font-size:38px;line-height:1;margin:10px 0 14px;letter-spacing:-.02em}.hero p{margin:0;font-size:15px}.booking-wrap{width:min(900px,calc(100% - 28px));margin:22px auto 50px}.booking-panel{background:#fff;border:1px solid var(--line);padding:28px}.booking-panel h2{font-size:30px;margin:8px 0 8px}.intro{color:var(--muted);line-height:1.55;margin:0 0 20px}.section-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:20px}.duration-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:10px 0 18px}.choice{border:1px solid #cbc5bb;background:#fff;padding:12px 8px;min-height:44px;font-weight:800;cursor:pointer}.choice.active{background:#111;color:#fff;border-color:#111}.choice:disabled{opacity:.45;cursor:not-allowed;background:#eee;color:#777}.field{margin-top:16px}.field label{display:block;font-size:11px;font-weight:900;margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}.field input{width:100%;padding:13px;border:1px solid #cbc5bb;background:#fff;font-size:16px}.date-field{max-width:360px}.availability{margin-top:24px}.availability-head,.availability-row{display:grid;grid-template-columns:95px 1fr 1fr;gap:8px;align-items:center}.availability-head{font-size:11px;font-weight:900;text-transform:uppercase;color:#777;padding:0 4px 7px}.availability-row{padding:4px 0}.availability-time{font-weight:800;padding:10px 4px}.slot{width:100%}.notice{margin-top:18px;background:#f7f1e3;border-left:4px solid var(--gold);padding:14px 16px;font-size:13px;line-height:1.5}.notice.error{background:#fbefef;border-left-color:#a93535}.summary{margin:22px 0 4px;background:#f7f1e3;border-left:4px solid var(--gold);padding:14px 16px}.summary span,.summary strong,.summary small{display:block}.summary span{font-size:11px;font-weight:900;text-transform:uppercase}.summary strong{margin-top:5px}.summary small{margin-top:4px;color:var(--muted)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}.policy{display:flex;gap:9px;align-items:flex-start;margin-top:18px;font-size:12px;color:var(--muted);line-height:1.5}.policy input{margin-top:2px}.actions{display:flex;justify-content:flex-end;margin-top:22px}.btn{border:0;padding:15px 20px;background:var(--gold);font-weight:900;cursor:pointer}.btn:disabled{opacity:.55}.loading{color:var(--muted);font-size:13px;padding:12px 0}.success{text-align:left}.check{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--gold);font-size:26px;font-weight:900;margin-bottom:16px}.hidden{display:none!important}body.embedded{background:#fff}body.embedded .standalone-only{display:none!important}body.embedded .booking-wrap{width:100%;margin:0}body.embedded .booking-panel{border:0;padding:18px 4px 24px}
+@media(max-width:650px){.duration-grid{grid-template-columns:repeat(2,1fr)}.duration-grid button:last-child{grid-column:1/-1}.availability-head,.availability-row{grid-template-columns:64px 1fr 1fr;gap:5px}.availability-head{font-size:9px}.availability-time{font-size:13px}.slot{font-size:11px;padding:10px 4px}.contact-grid{grid-template-columns:1fr}.full{grid-column:auto}.booking-panel{padding:21px}.call{display:none}}
+</style>
 </head>
-<body data-service="simulator">
-  <header class="site-header standalone-only"><div class="wrap header-inner"><div class="brand"><span class="brand-mark">GB</span><span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span></div><a class="call" href="tel:+16183075858">618.307.5858</a></div></header>
-  <main class="booking-page"><section class="standalone-only mini-hero"><div class="wrap"><p class="eyebrow">GOLF SIMULATORS</p><h1>BOOK YOUR SIM.</h1><p>Choose a session length, date, simulator, and available start time.</p></div></section><section class="booking-wrap"><div id="bookingRoot" class="booking-root" aria-live="polite"></div></section></main>
-  <script src="config.js"></script><script src="app.js"></script>
+<body>
+<header class="site-header standalone-only"><div class="wrap header-inner"><div class="brand"><span class="brand-mark">GB</span><span><strong>GLOBAL BREW</strong><small>TAP HOUSE · EDWARDSVILLE</small></span></div><a class="call" href="tel:+16183075858">618.307.5858</a></div></header>
+<section class="hero standalone-only"><div class="wrap"><p class="eyebrow">GOLF SIMULATORS</p><h1>BOOK YOUR SIM.</h1><p>Choose a session length, date, simulator, and available start time.</p></div></section>
+<main class="booking-wrap">
+  <section id="bookingPanel" class="booking-panel">
+    <div class="step-label">GOLF SIMULATOR RESERVATION</div>
+    <h2>Find an available simulator</h2>
+    <p class="intro">Choose your session length and date. Live openings for Simulator 1 and Simulator 2 will appear below.</p>
+
+    <div class="section-label">1. Session length</div>
+    <div class="duration-grid" id="durationGrid">
+      <button type="button" class="choice" data-min="60">1 HR</button>
+      <button type="button" class="choice" data-min="90">1.5 HR</button>
+      <button type="button" class="choice active" data-min="120">2 HR</button>
+      <button type="button" class="choice" data-min="150">2.5 HR</button>
+      <button type="button" class="choice" data-min="180">3 HR</button>
+    </div>
+
+    <div class="section-label">2. Date</div>
+    <div class="field date-field"><label for="simDate">Reservation date</label><input id="simDate" type="date"></div>
+
+    <div id="availability"></div>
+    <div id="contactArea"></div>
+  </section>
+</main>
+<script>
+(function(){
+  const API='https://script.google.com/macros/s/AKfycbx23figctKE2yi7x7EWsQSWK9A7A3sKn6lMRIBTXE6k6HAqyie4KX7bbxjiw_9hKaBhdw/exec';
+  const qs=new URLSearchParams(location.search);
+  const embedded=qs.get('embed')==='1';
+  if(embedded) document.body.classList.add('embedded');
+  let duration=120, date='', time='', simulator='';
+  const $=id=>document.getElementById(id);
+  function resize(){ if(embedded){ setTimeout(()=>parent.postMessage({type:'gb-resize',height:document.documentElement.scrollHeight},'*'),50); } }
+  function today(){ const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,10); }
+  function prettyDate(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+  function durationText(m){ if(m===60)return '1 Hour'; if(m===90)return '1.5 Hours'; if(m===120)return '2 Hours'; if(m===150)return '2.5 Hours'; return '3 Hours'; }
+  $('simDate').min=today();
+  document.querySelectorAll('[data-min]').forEach(btn=>btn.addEventListener('click',function(){
+    duration=Number(this.dataset.min); document.querySelectorAll('[data-min]').forEach(b=>b.classList.toggle('active',b===this));
+    if(date) loadAvailability();
+  }));
+  $('simDate').addEventListener('change',function(){ date=this.value; time=''; simulator=''; $('contactArea').innerHTML=''; if(date) loadAvailability(); });
+
+  async function loadAvailability(){
+    $('availability').innerHTML='<div class="loading">Checking live availability for both simulators…</div>'; $('contactArea').innerHTML=''; resize();
+    try{
+      const u=new URL(API); u.searchParams.set('action','availability'); u.searchParams.set('date',date); u.searchParams.set('duration',duration); u.searchParams.set('resource','simulator'); u.searchParams.set('_',Date.now());
+      const r=await fetch(u.toString(),{method:'GET',redirect:'follow'}); if(!r.ok) throw new Error('Availability request failed');
+      const data=await r.json(); if(!data.ok) throw new Error(data.error||'Availability unavailable');
+      const rows=(data.times||[]).map(slot=>'<div class="availability-row"><div class="availability-time">'+slot.time+'</div><button type="button" class="choice slot" '+(slot.simulator1?'':'disabled')+' data-sim="simulator1" data-time="'+slot.time+'">'+(slot.simulator1?'Available':'Booked')+'</button><button type="button" class="choice slot" '+(slot.simulator2?'':'disabled')+' data-sim="simulator2" data-time="'+slot.time+'">'+(slot.simulator2?'Available':'Booked')+'</button></div>').join('');
+      $('availability').innerHTML='<div class="availability"><div class="section-label">3. Simulator & start time</div><p class="intro">Select the exact simulator and start time you want.</p><div class="availability-head"><span>Time</span><span>Simulator 1</span><span>Simulator 2</span></div>'+(rows||'<div class="notice">No openings are available for this date and session length.</div>')+'</div>';
+      document.querySelectorAll('[data-sim]').forEach(btn=>btn.addEventListener('click',function(){
+        simulator=this.dataset.sim; time=this.dataset.time; document.querySelectorAll('[data-sim]').forEach(b=>b.classList.toggle('active',b===this)); renderContact();
+      })); resize();
+    }catch(err){
+      console.error(err); $('availability').innerHTML='<div class="notice error"><strong>Live availability could not be loaded.</strong><br>Please call Global Brew at 618.307.5858 while we finish connecting the online calendar.</div>'; resize();
+    }
+  }
+
+  function renderContact(){
+    const label=simulator==='simulator1'?'Simulator 1':'Simulator 2';
+    $('contactArea').innerHTML='<div class="summary"><span>'+label+'</span><strong>'+prettyDate(date)+' · '+time+'</strong><small>'+durationText(duration)+'</small></div><div class="section-label">4. Your information</div><div class="contact-grid"><div class="field"><label for="custName">Name</label><input id="custName" autocomplete="name"></div><div class="field"><label for="custPhone">Phone</label><input id="custPhone" type="tel" autocomplete="tel"></div><div class="field full"><label for="custEmail">Email</label><input id="custEmail" type="email" autocomplete="email"></div></div><label class="policy"><input id="policy" type="checkbox"><span>I understand this reservation is for the selected simulator and time and I should contact Global Brew if I need to make a change.</span></label><div class="actions"><button type="button" class="btn" id="confirmBtn">Confirm reservation</button></div>';
+    $('confirmBtn').addEventListener('click',submit); resize();
+  }
+
+  async function submit(){
+    const name=$('custName').value.trim(), phone=$('custPhone').value.trim(), email=$('custEmail').value.trim();
+    if(!name||!phone||!email){ alert('Please complete your name, phone and email.'); return; }
+    if(!$('policy').checked){ alert('Please acknowledge the reservation policy.'); return; }
+    const btn=$('confirmBtn'); btn.disabled=true; btn.textContent='BOOKING…';
+    const payload={action:'book',resource:'simulator',simulator,duration,date,time,name,phone,email};
+    try{
+      const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload),redirect:'follow'});
+      const data=await r.json(); if(!data.ok) throw new Error(data.error||'Could not book reservation');
+      const label=simulator==='simulator1'?'Simulator 1':'Simulator 2';
+      $('bookingPanel').innerHTML='<div class="success"><div class="check">✓</div><div class="step-label">RESERVATION CONFIRMED</div><h2>You’re booked.</h2><p class="intro">Your <strong>'+label+'</strong> reservation is confirmed for <strong>'+prettyDate(date)+'</strong> at <strong>'+time+'</strong> for <strong>'+durationText(duration)+'</strong>.</p><p class="intro">A confirmation email has been sent to <strong>'+email+'</strong>.</p></div>'; resize();
+    }catch(err){ console.error(err); alert(err.message||'Could not complete the reservation.'); btn.disabled=false; btn.textContent='Confirm reservation'; }
+  }
+  window.addEventListener('load',resize); window.addEventListener('resize',resize); resize();
+})();
+</script>
 </body>
 </html>
